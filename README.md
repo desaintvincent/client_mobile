@@ -1,4 +1,4 @@
-# Projet Mobile Hybrid: server
+# Projet Mobile Hybrid: client
 
 ## Autors
 * robert_u (Thomas Robert de Saint Vincent)
