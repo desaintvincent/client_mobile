@@ -1,0 +1,131 @@
+.loader {
+  height: 9em;
+  position: relative;
+  margin: auto;
+  margin-top: 5em;
+  transform-style: preserve-3d;
+  width: 9em;
+  transform: rotateX(45deg) rotateZ(45deg);
+
+  .cube {
+    $shadow: hsla(0, 0%, 0%, .1);
+    $odd: #f66;
+    $even: #fc6;
+    /* Top */
+    background-color: $odd;
+    position: relative;
+    transform: translateZ(3em);
+    transform-style: preserve-3d;
+    transition: .25s;
+    box-shadow: inset 0 0 0 .25em $shadow;
+    float: left;
+    height: 3em;
+    width: 3em;
+
+    /* Left */
+    &::after {
+      box-shadow: inset 0 0 0 .25em $shadow;
+      content: '';
+      float: left;
+      height: 3em;
+      position: absolute;
+      width: 3em;
+      background-color: darken($odd, 5);
+      transform: rotateX(-90deg) translateY(3em);
+      transform-origin: 100% 100%;
+    }
+
+    /* Right */
+    &::before {
+      box-shadow: inset 0 0 0 .25em $shadow;
+      content: '';
+      float: left;
+      height: 3em;
+      position: absolute;
+      width: 3em;
+      background-color: darken($odd, 10);
+      transform: rotateY(90deg) translateX(3em);
+      transform-origin: 100% 0;
+    }
+
+    /* Alternate Colour */
+    &:nth-child(even) {
+      background-color: $even;
+
+      &::before {
+        background-color: darken($even, 5);
+      }
+
+      &::after {
+        background-color: darken($even, 10);
+      }
+    }
+
+    @for $i from 1 to (10) {
+      &:nth-child(#{$i}) {
+        animation: waveLoader 2s #{($i - 1) * .2}s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+#loaderContainer {
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  z-index: 999;
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+
+  .loader {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 9em;
+    transform: translateX(-50%) translateY(-50%) rotateX(45deg) rotateZ(45deg);
+    margin-top: 0;
+  }
+}
+
+#loadingText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20%;
+  font-size: 1.4em;
+  color: $white;
+  text-align: center;
+}
+
+#cancelConnect {
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: auto;
+  text-decoration: none;
+  text-align: center;
+  background-color: #f04124;
+  border-color: #cf2a0e;
+  color: #FFFFFF;
+  padding-top: 1.125rem;
+  padding-right: 2.25rem;
+  padding-bottom: 1.1875rem;
+  padding-left: 2.25rem;
+  font-size: 1.25rem;
+  bottom: 10%;
+  border-radius: 1000px;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  right: 25%;
+}
+
+/* Animation */
+@keyframes waveLoader {
+  50% { transform: translateZ(4.5em); }
+}

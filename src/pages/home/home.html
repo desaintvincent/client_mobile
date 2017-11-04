@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="ion-canvas">
+    <canvas #canvas></canvas>
+  </div>
+  <div id="contextualMenu"></div>
+  <div id="displayFPS"></div>
+  <div id="displayTILES"></div>
+  <!--
+<a id="openMenu" href="#menu">
+ div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </a>
+  -->
+  <div id="loaderContainer">
+    <div class="loader">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+    <div id="loadingText"></div>
+    <button id="cancelConnect">
+    </button>
+  </div>
+  <button id="share" (click)="goToSharePage()"> <ion-icon name="share"></ion-icon></button>
+  <button id="disconnect" (click)="logout()"> <ion-icon name="exit"></ion-icon></button>
+</ion-content>

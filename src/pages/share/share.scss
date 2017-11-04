@@ -1,0 +1,30 @@
+page-share {
+  .find {
+    background: none;
+    float: right;
+    top: -30px;
+    position: relative;
+    font-size: 1.4em;
+  }
+
+  .sharevia {
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    margin: auto;
+    text-decoration: none;
+    text-align: center;
+    background-color: blue;
+    border-color: blue;
+    color: #FFFFFF;
+    padding-top: 1.125rem;
+    padding-right: 2.25rem;
+    padding-bottom: 1.1875rem;
+    padding-left: 2.25rem;
+    font-size: 1.25rem;
+    border-radius: 1000px;
+  }
+}

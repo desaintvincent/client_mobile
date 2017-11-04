@@ -1,0 +1,50 @@
+<!--
+  Generated template for the SharePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Share with a friend</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="contactsfound !== undefined">
+    <ion-item class="sharevia" (click)="shareVia()" >
+      Share via applications
+    </ion-item>
+    <ion-item>
+      <ion-label floating class="placeholder">Or find contact</ion-label>
+      <ion-input type="text" [(ngModel)]="contacttobefound"></ion-input>
+    </ion-item>
+    <button class="find" (click)="getContact(contacttobefound)"><ion-icon name="search" ></ion-icon></button>
+
+      <ion-list *ngFor="let item of contactsfound" id="ContactList">
+        <ion-item (click)="sendSMS(item)">
+          {{item.name.givenName}} {{item.name.familyName}}
+        </ion-item>
+      </ion-list>
+    <ion-item *ngIf="contactsfound.length == 0">
+      Aucun ne résultat ne correcpond à cette recherche
+    </ion-item>
+  </div>
+  <ion-item *ngIf="contactsfound === undefined">
+    <div class="loader">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,66 @@
+#contextualMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 50px;
+  max-width: 200px;
+  min-height: 50px;
+  max-height: 200px;
+  background: $white;
+  display: none;
+  border: 1px solid $black;
+  overflow: auto;
+
+  .title {
+    color: $red;
+    border-bottom: 1px solid $darkgray;
+    padding: 5px;
+    font-size: 1.2em;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      position: relative;
+      border-bottom: 1px solid $darkgray;
+      color: $black;
+      padding: 5px;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &:hover {
+        color: $white;
+        background: $darkgray;
+        cursor: pointer;
+      }
+
+      &.half {
+        display: inline-block;
+        width: calc(50% - 10px);
+        float: left;
+        text-align: center;
+
+        &:nth-child(odd)::after {
+          content: ' ';
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          background: $darkgray;
+        }
+
+        img {
+          width: 80px;
+          height: 60px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

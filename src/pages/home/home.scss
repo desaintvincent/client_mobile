@@ -1,0 +1,31 @@
+page-home {
+  background: #000;
+
+  #share {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: blue;
+    color: white;
+    padding: 20px 15px 10px 25px;
+    margin: 0;
+    font-size: 2em;
+    border-top-left-radius: 100%;
+  }
+
+  #disconnect {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #f30d0d;
+    color: white;
+    padding: 20px 25px 10px 15px;
+    margin: 0;
+    font-size: 2em;
+    border-top-right-radius: 100%;
+  }
+
+  .scroll-content {
+    overflow-y: hidden;
+  }
+}
